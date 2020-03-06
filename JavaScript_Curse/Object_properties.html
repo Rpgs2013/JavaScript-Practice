@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Properties</title>
+</head>
+<body>
+    <script>
+        function objects(){
+            var myDog = {
+                "ocico": "grande",
+                "dientes": 42,
+                "nariz": "limpia",
+                "bigotes": "muy utiles",
+                "ojos": "marrones",
+                "lengua": "larga"
+            };
+
+            //We use it for add an other propreties to the object
+            myDog.saliva = "acida";
+
+            //We use it for delete propertys from the object
+            delete myDog.bigotes;
+
+            myDog.bigotes = "cortados";
+            return myDog;
+        }
+
+        console.log(objects());
+
+        // We can use objects insted of switch.
+        function instedSwitch(val) {
+            var result = "";
+            var likeSwitch = {
+                "1": "Paco",
+                "2": "Roberto",
+                "3": "Juan",
+                "4": "Julian"
+            }
+            result = likeSwitch[val];
+            return result;
+        }
+
+        console.log(instedSwitch("3"));
+        //What an amazing utility.
+
+        //We create an object for try our new function
+        var myCat = {
+            "ocico": "pequeño",
+            "dientes": 30,
+            "nariz": "limpita",
+            "bigotes": "muy utiles",
+            "ojos": "azules",
+            "lengua": "rugosa"
+        };
+
+        //We use it function for check if the object have those properties
+        function checkObj(checkProp) {
+            if(myCat.hasOwnProperty(checkProp)) {
+                return myCat[checkProp];
+            }
+            else {
+                return "Not found";
+            }
+        }
+
+        console.log("The property that you are looking for is: " + checkObj("ocico"));
+
+        myArr = [ 
+            gato = {
+                "ocico": "pequeño",
+                "dientes": 30,
+                "nariz": "limpita",
+                "bigotes": "muy utiles",
+                "ojos": "azules",
+                "lengua": "rugosa"
+            },
+
+            tiburon = {
+                "ocico": "grande",
+                "dientes": 70,
+                "nariz": "no",
+                "bigotes": "no",
+                "ojos": "blancos",
+                "lengua": "enorme"
+            }
+        ];
+
+        console.log(myArr);
+        console.log(myArr[1]);
+
+        //This is how you acces to properties of an object, who contains more objects
+        var storage = {
+            "car": {
+                "inside": {
+                    "maps op": "report"
+                }
+            }
+        };
+
+        var myStorage = storage.car.inside["maps op"];
+        
+        console.log(myStorage);
+
+
+        //To make an array of objects who has anoters arrays
+        var myPlants = [
+            {
+                "type": "flowers",
+                "list": [
+                    "tulipan",
+                    "marguerite",
+                    "dandelion"
+                ]
+            },
+
+            {
+                "type": "trees",
+                "list": [
+                    "pine",
+                    "birch",
+                    "fir"
+                ]
+            }
+        ];
+
+        var myFlowers = myPlants[0];
+        var myTrees = myPlants[1]; 
+        console.log(myFlowers);
+        console.log("The type of flower that you select is the: " + myFlowers.list[0]);
+
+        console.log(myTrees);
+        console.log("The type of tree that you select is the: " + myTrees.list[1]);
+    </script>
+</body>
+</html>

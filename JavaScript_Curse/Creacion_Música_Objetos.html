@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>Artista:</label><br>
+        <input type="text" id="artist" placeholder="Artista..."><br><br>
+
+        <label>Album:</label><br>
+        <input type="text" id="album" placeholder="Album..."><br><br>
+
+        <label>Año:</label><br>
+        <input type="text" id="year" placeholder="Año..."><br><br>
+
+        <label>Cancion:</label><br>
+        <input type="text" id="song" placeholder="Canción..."><br><br>
+        <input type="button" id="clearbutton" value="Enviar" onclick="capture(); add()">
+    </form>
+    <script>
+
+        var song = [];
+        function capture() {
+            function Player(artist, album, year, song) {
+                this.artist = artist;
+                this.album = album;
+                this.year = year;
+                this.song = song;
+            }
+
+            var artista = document.getElementById("artist").value;
+            var album = document.getElementById("album").value;
+            var anio = document.getElementById("year").value;
+            var cancion = document.getElementById("song").value;
+            song.push(cancion);
+
+            newPlayer = new Player(artista, album, anio, song);
+            console.log(newPlayer);
+
+        }
+        var myPlayer = [];
+
+        function add() {
+            myPlayer.push(newPlayer);
+            console.log(myPlayer);
+        }
+
+        function erase() {
+            myPlayer.delete();
+        }
+
+        //For change te code
+        function updatesRecords(prop, value){
+            if (value === ""){
+                delete[prop];
+            }
+            else if (prop === "song"){
+                Player[prop] = Player[prop] || [];
+                Player[prop].push(value);
+            }
+            else {
+                Player[prop] = value;
+            }
+            return Player;
+        }
+
+            /*//After values below to test your code
+            var myArtist = document.getElementById("artist").value;
+            var myAlbum = document.getElementById("album").value;
+            var myYear = document.getElementById("year").value;
+            var mySong = document.getElementById("song").value;
+
+            updatesRecords("artista", myArtist);
+            updatesRecords("album", myAlbum);
+            updatesRecords("year", myYear);
+            console.log(updatesRecords("song", mySong));
+            //*/
+
+    </script>
+</body>
+</html>

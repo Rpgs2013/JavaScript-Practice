@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object</title>
+</head>
+<body>
+    <form>
+        <label>Nombre:</label><br>
+        <input type="text" id="name" placeholder="Nombre..."><br><br>
+
+        <label>Primer Apellido:</label><br>
+        <input type="text" id="ap1" placeholder="Primer apellido..."><br><br>
+
+        <label>Segundo Apellido:</label><br>
+        <input type="text" id="ap2" placeholder="Segundo apellido..."><br><br>
+
+        <label>Número de telefono:</label><br>
+        <input type="text" id="number" placeholder="Número de telefono..."><br><br>
+        <input type="button" id="clearbutton" value="Enviar" onclick="capture(); add()">
+    </form>
+    <script>
+
+        function capture() {
+            function Contact(firstName, lastName1, lastName2, number) {
+                this.firstName = firstName;
+                this.lastName1 = lastName1;
+                this.lastName2 = lastName2;
+                this.number = number;
+            }
+
+            var nombre = document.getElementById("name").value;
+            var ap1 = document.getElementById("ap1").value;
+            var ap2 = document.getElementById("ap2").value;
+            var numeroTlfn = document.getElementById("number").value;
+
+            newContact = new Contact(nombre, ap1, ap2, numeroTlfn);
+            console.log(newContact);
+
+        }
+        var myContacts = [];
+
+        function add() {
+            myContacts.push(newContact);
+            console.log(myContacts);
+        }
+
+        function errase() {
+            myContacts.delete()
+        }
+
+    </script>
+</body>
+</html>

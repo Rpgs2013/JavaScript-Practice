@@ -1,0 +1,22 @@
+TODOs
+
+1.- Navbar:
+    - Promociones
+    - Juegos de Casino
+ // - Slots y Botes 
+    - Blog
+    - Politicas
+
+    - Soporte
+    - Buscador
+    - Inicio de sesión y Registro
+
+2.- Portfolio item grid:
+    - Files
+    - Folders
+    - Descriptions
+    - Animations
+
+3.- About Page:
+
+

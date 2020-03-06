@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nextIntLine(arr, item) {
+            arr.push(item);
+            return item;
+        }
+
+        var testArr = [1, 2, 3, 4, 5];
+
+        console.log('Before: ' + JSON.stringify(testArr));
+        console.log('We add a six, to the end of the array: ' + nextIntLine(testArr, 6));
+        console.log('After: ' + JSON.stringify(testArr));
+
+        //Porperty example
+        var contacts = [
+            {
+                'firstName': 'Raul',
+                'lastName': 'Gallego',
+                'number': '620592127',
+                'likes': ["Udon", "Ramen", "Pizza"]
+            },
+            {
+                'firstName': 'Lorenzo',
+                'lastName': 'Gallego',
+                'number': '649859740',
+                'likes': ["Dulce", "Salado", "Agrio"]
+            },
+            {
+                'firstName': 'Carmen',
+                'lastName': 'Sandoval',
+                'number': '649859740',
+                'likes': ["Cocido", "Estofado", "Sopa"]
+            }
+        ];
+    
+        function lookUpFunction(name, prop) {
+            for(var i = 0; i < contacts.length; i++) {
+                if(contacts[i].firstName === name) {
+                    return contacts[i][prop] || "No se encuentra su propiedad.";
+                }
+            }
+            return "No se encuentra su contacto.";
+        }
+
+        var nameTest = prompt("Introduce el nombre que quieres buscar en tus contactos: ");
+        var data = lookUpFunction(nameTest, 'likes');
+
+        console.log(data);
+    </script>
+</body>
+</html>

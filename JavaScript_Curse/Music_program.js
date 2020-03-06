@@ -1,0 +1,68 @@
+       var myId = prompt("Introduce el id, al cual quieres acceder: ");
+       var myArtist = prompt("Introduce el Artista: ");
+       var myAlbum = prompt("Introduce el album: ")
+       var myYear = prompt("Introduce el año en el cual se sacó el album: ");
+       
+       var collection = {
+            "1": {
+                "artista": "Avenged Sevenfold",
+                "album": "Hail to the king",
+                "year": "2013",
+                "pistas": [
+                    "Shephered of Fire",
+                    "Hail to the King",
+                    "Doing Time",
+                    "This Means War",
+                    "Requiem",
+                    "Crimson Day",
+                    "Heretic",
+                    "Coming Home",
+                    "Planets",
+                    "Acid Rain"
+                ]
+            },
+       
+       
+            "2": {
+                "artista": "Queen",
+                "album": "A Night at the Opera",
+                "year": "1975",
+                "pistas": [
+                    "Death on Two Legs",
+                    "Lazing On A Sunday Afternoon",
+                    "I'm In Love With My Car",
+                    "You're My Best Friend",
+                    "'39",
+                    "Sweet Lady",
+                    "Seaside Rendezvous",
+                    "The Prophet's Song",
+                    "Love of My Life",
+                    "Good Company",
+                    "Bohemian Rhapsody",
+                    "God Save the Queen"
+                ]
+            }
+       }
+
+       //We are going to pick a copy of the collection for test it
+       var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+       //For change te code
+       function updatesRecords(id, prop, value){
+            if (value === ""){
+                delete[id][prop];
+            }
+            else if (prop === "pistas"){
+                collection[id][prop] = collection[id][prop] || [];
+                collection[id][prop].push(value);
+            }
+            else {
+                collection[id][prop] = value;
+            }
+            return collection;
+       }
+
+       //After values below to test your code
+       updatesRecords(myId, "artista", myArtist);
+       updatesRecords(myId, "album", myAlbum);
+       console.log(updatesRecords(myId, "year", myYear));

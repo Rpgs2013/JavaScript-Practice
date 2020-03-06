@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>  
+    <script>
+        let yourAge = 18;
+        let yourNamme = "Roberto";
+        let name = {first: "Jane", last: "Doe"};
+        let bool = false;
+        let arr = ["comida", "bebida", "poco más"];
+        let nothing = null;
+        
+        let fruit = "banana,apple,rose";
+        let moreFruits = 'banana \n apple';
+        console.log(fruit.length); //numero de posiciones
+        console.log(fruit.indexOf('nan')); //
+        console.log(fruit.slice(2, 6));
+        console.log(fruit.replace('ban', '123'));
+        console.log(fruit.toUpperCase());
+        console.log(fruit.toLowerCase());
+        console.log(fruit.charAt(2));
+        console.log(fruit[2]);
+        console.log(fruit.split(',')); //split by comma
+        console.log(fruit.split('')); //split by characters
+
+        // Array
+        let fruits = ['banana', 'apple', 'stawberry'];
+        console.log('To string: ' + fruits.toString());
+        console.log(fruits.join(' * '));
+        console.log(fruits.pop(), fruits); //remove last item
+        console.log(fruits.push('blackberries'), fruits); //appends
+        fruits.shift(); //remove first element of the array
+        console.log(fruits);
+        fruits.unshift('kiwi'); //add first element to an array
+        console.log(fruits);
+
+        let vegetables = ['asparagus', 'tomatoe', 'broccoli'];
+        let allGroceries = fruits.concat(vegetables);
+        console.log(allGroceries);
+        console.log(allGroceries.slice(1, 4));
+        console.log(allGroceries.reverse());
+        console.log(allGroceries.sort());
+
+        /*let someNumbers = [1, 2, 3, 4, 436, 523, 5234, 52, 523, 23];
+        console.log(someNumbers.sort(function(a, b) {*/
+        /*    return a - b
+        }));*/
+
+        let student  = {
+            first: 'Raúl', 
+            last: 'Gallego Sandoval',
+            age: 21, 
+            height: 1.85
+        };
+        console.log(student.first);
+        console.log(student.last);
+
+        
+    </script>
+</body>
+</html>

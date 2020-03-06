@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apk Web</title>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <section>
+        <form>
+            <label>Introduce el titulo del libro: </label><br>
+            <input id="titulo" type="text"><br><br>
+
+            <label>Introduce la editorial del libro: </label><br>
+            <input id="editorial" type="text"><br><br>
+
+            <input type="button" value="Almacenar Libro" onclick="crearLibro()">
+        </form>
+    </section>
+    <script>
+
+       var myBooks = [];
+
+       function crearLibro () {
+            titulo = document.getElementById("titulo").value;
+            editorial = document.getElementById("editorial").value;
+
+            alert("El titulo introducido es: " + titulo);
+            alert("La editorial introducida es: " + editorial);
+
+            libro = {
+                "titulo": titulo,
+                "editorial": editorial
+            };
+
+            var arrPush = myBooks.push(libro);
+            
+            alert("El array es: " + myBooks);
+
+            for(var i = 0; i < myBooks.length; i++) {
+                console.log(myBooks[i]);
+            }
+       }
+
+
+       /*var titulo1 = prompt("Introduce el titulo del primer libro: ");
+       var titulo2 = prompt("Introduce el titulo del segundo libro: ");
+       var titulo3 = prompt("Introduce el titulo del tercer libro: ");
+       var titulo4 = prompt("Introduce el titulo del cuarto libro: ");
+
+       var editorial1 = prompt("Introduce el editorial del primer libro: ");
+       var editorial2 = prompt("Introduce el editorial del segundo libro: ");
+       var editorial3 = prompt("Introduce el editorial del tercer libro: ");
+       var editorial4 = prompt("Introduce el editorial del cuarto libro: ");*/
+
+       /*misLibros = [ libro = {
+            "titulo": titulo1,
+            "editorial": editorial1
+       },
+       libro = {
+            "titulo": titulo2,
+            "editorial": editorial2
+       },
+       libro = {
+            "titulo": titulo3,
+            "editorial": editorial3
+       },
+       libro = {
+            "titulo": titulo4,
+            "editorial": editorial4
+       }];
+
+       console.log(misLibros);*/
+    </script>
+</body>
+</html>
